@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.reactive.result.view.Rendering;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 
 @Controller
@@ -16,8 +15,8 @@ public class RedisManagerController {
 
     private final ReactiveRedisOperations<Object, Object> template;
 
-    public RedisManagerController(ReactiveRedisOperations<Object, Object> createRedisTemplate) {
-        this.template = createRedisTemplate;
+    public RedisManagerController(ReactiveRedisOperations<Object, Object> reactiveRedisTemplate) {
+        this.template = reactiveRedisTemplate;
     }
 
     @GetMapping("/")
